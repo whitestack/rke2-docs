@@ -4,7 +4,7 @@ title: Migration from RKE1 to RKE2
 # THIS IS A WORK IN PROGRESS PAGE, EVERYTHING BELOW IS SUBJECT TO CHANGE.
 # DO NOT RELY ON THIS DOCUMENTATION UNTIL THIS WARNING IS REMOVED.
 
-In order to migrate from Rancher Kubernetes Engine (RKE1) to RKE2, you need two things:
+In order to migrate from RKE (RKE1) to RKE2, you need two things:
 
 - ETCD data directory
 - Cluster CA certificates
@@ -28,9 +28,9 @@ This tool runs on RKE1 nodes before running RKE2.
     rke etcd snapshot-save --s3 --name rke1snapshot --access-key <access-key> --secret-key <secret-key> --region <region> --folder <folder> --bucket-name <bucket name>
     ```
 	
-For more information, please refer to the RKE1 [official documentation](https://rancher.com/docs/rke/latest/en/etcd-snapshots/one-time-snapshots/)
+For more information, please refer to the RKE1 official documentation
 
-2. Now you can either run migration agent directly on the node, or use the following [manifest](https://github.com/rancher/migration-agent/blob/master/deploy/daemonset.yaml) to deploy migration-agent as a daemonset on the RKE1 cluster. Before you apply the manifest file, you need to edit the file to include the information about the s3 snapshot of RKE1:
+2. Now you can either run migration agent directly on the node, or use the following manifest to deploy migration-agent as a daemonset on the RKE1 cluster. Before you apply the manifest file, you need to edit the file to include the information about the s3 snapshot of RKE1:
     ```
     command:
     - "sh"

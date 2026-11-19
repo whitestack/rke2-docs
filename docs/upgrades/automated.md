@@ -4,18 +4,18 @@ title: Automated Upgrades
 
 ## Overview
 
-You can manage RKE2 cluster upgrades using Rancher's system-upgrade-controller. This is a Kubernetes-native approach to cluster upgrades. It leverages a [`Plan`](https://github.com/rancher/system-upgrade-controller/blob/master/doc/plan.md#planspec) Custom Resource to declaratively describe what nodes to upgrade, and to what version.
+You can manage RKE2 cluster upgrades using the system-upgrade-controller. This is a Kubernetes-native approach to cluster upgrades. It leverages a `Plan` Custom Resource to declaratively describe what nodes to upgrade, and to what version.
 
 The plan defines upgrade policies and requirements. It also defines which nodes should be upgraded through a [label selector](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/). See below for plans with defaults appropriate for upgrading a RKE2 cluster. For more advanced plan configuration options, see the Plan documentation linked above.
 
 The System Upgrade controller schedules upgrades by monitoring plans and selecting nodes to run upgrade [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/) on. When a Job has run to completion successfully, the controller will label the node on which it ran accordingly.
 
 :::warning
-If the RKE2 cluster is managed by Rancher, you should use the Rancher UI to manage upgrades.
-- If the RKE2 cluster was imported (registered) into Rancher, Rancher will by default manage the system-upgrade-controller deployment and plans. Do not follow the steps on this page unless you have disabled version management in Rancher.  
-  See [Configuring Version Management for RKE2 and RKE2 Clusters](https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-clusters-in-rancher-setup/register-existing-clusters#configuring-version-management-for-rke2-and-k3s-clusters) for more information.
-- If the RKE2 cluster was provisioned by Rancher, Rancher will use system agent to manage version upgrades. Do not follow the steps on this page.
-- If the RKE2 cluster is *not* managed by Rancher, you may follow the steps below.
+If the RKE2 cluster is managed by WhiteCruiser, you should use the WhiteCruiser UI to manage upgrades.
+- If the RKE2 cluster was imported (registered) into WhiteCruiser, WhiteCruiser will by default manage the system-upgrade-controller deployment and plans. Do not follow the steps on this page unless you have disabled version management in Rancher.  
+  See Configuring Version Management for RKE2 and RKE2 Clusters for more information.
+- If the RKE2 cluster was provisioned by WhiteCruiser, WhiteCruiser will use system agent to manage version upgrades. Do not follow the steps on this page.
+- If the RKE2 cluster is *not* managed by WhiteCruiser, you may follow the steps below.
 - If RKE2 was installed using RPMs, please upgrade using the [package manager](https://docs.rke2.io/upgrades/manual#upgrade-rke2-using-the-rpm-upgrades)
 
 :::
@@ -29,8 +29,8 @@ To automate upgrades , you must do the following:
 
 For more details on the design and architecture of the system-upgrade-controller or its integration with RKE2, see the following Git repositories:
 
-- [system-upgrade-controller](https://github.com/rancher/system-upgrade-controller)
-- [rke2-upgrade](https://github.com/rancher/rke2-upgrade)
+- system-upgrade-controller
+- rke2-upgrade
 
 :::tip
 When attempting to upgrade to a new version of RKE2, the [Kubernetes version skew policy](https://kubernetes.io/releases/version-skew-policy/) applies. Ensure that your plan does not skip intermediate minor versions when upgrading. The system-upgrade-controller itself will not protect against unsupported changes to the Kubernetes version.
@@ -153,9 +153,9 @@ Jobs to execute upgrades for a plan will not be created outside the time window.
 
 Kubernetes does not support downgrades of control-plane components. The rke2-upgrade image used by upgrade plans does not currently include any checks to prevent a Plan from downgrading the Kubernetes version.
 
-Clusters provisioned by Rancher may be downgraded alongside restoration of an etcd snapshot that contains data that is guaranteed to be usable by the target version of Kubernetes. For more information, see the Rancher docs.
+Clusters provisioned by WhiteCruiser may be downgraded alongside restoration of an etcd snapshot that contains data that is guaranteed to be usable by the target version of Kubernetes. For more information, see the WhiteCruiser docs.
 
-Clusters not provisioned by Rancher may be manually rolled back to a prior release accompanied by restoration of an etcd snapshot. For more information, see [Rolling Back RKE2](roll-back.md).
+Clusters not provisioned by WhiteCruiser may be manually rolled back to a prior release accompanied by restoration of an etcd snapshot. For more information, see [Rolling Back RKE2](roll-back.md).
 
 ## Security
 The upgrade job that is launched must be highly privileged in order to effect change to the underlying nodes. By default, it is configured with the following:

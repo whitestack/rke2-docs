@@ -2,7 +2,7 @@
 title: Known Issues and Limitations
 ---
 
-This section contains current known issues and limitations with RKE2. If you come across issues with RKE2 not documented here, please open a new issue [here](https://github.com/rancher/rke2/issues).
+This section contains current known issues and limitations with RKE2. If you come across issues with RKE2 not documented here, please open a new issue here.
 
 ## Firewalld conflicts with default networking
 
@@ -19,7 +19,7 @@ unmanaged-devices=interface-name:flannel*;interface-name:cali*;interface-name:tu
 
 If you have not yet installed RKE2, a simple `systemctl reload NetworkManager` will suffice to install the configuration. If performing this configuration change on a system that already has RKE2 installed, a reboot of the node is necessary to effectively apply the changes.
 
-In some operating systems like RHEL 8.4, NetworkManager includes two extra services called `nm-cloud-setup.service` and `nm-cloud-setup.timer`.  These services add a routing table that interfere with the CNI plugin's configuration. Unfortunately, there is no config that can avoid that as explained in the [issue](https://github.com/rancher/rke2/issues/1053). Therefore, if those services exist, they should be disabled. 
+In some operating systems like RHEL 8.4, NetworkManager includes two extra services called `nm-cloud-setup.service` and `nm-cloud-setup.timer`.  These services add a routing table that interfere with the CNI plugin's configuration. Unfortunately, there is no config that can avoid that as explained in the issue. Therefore, if those services exist, they should be disabled. 
 :::info
   Before NetworkManager-1.30.0-11.el8_4, the node must also be rebooted after disabling the extra services.
 :::
@@ -59,15 +59,15 @@ spec:
       cniConfDir: /etc/cni/net.d
 ```
 
-For more information regarding exact failures with detailed logs when not following these steps, please see [Issue 504](https://github.com/rancher/rke2/issues/504).
+For more information regarding exact failures with detailed logs when not following these steps, please see Issue 504.
 
 
 ## Calico with vxlan encapsulation
 
 Calico hits a kernel bug when using vxlan encapsulation and the checksum offloading of the vxlan interface is on.
 The issue is described in the [calico project](https://github.com/projectcalico/calico/issues/4865) and in
-[rke2 project](https://github.com/rancher/rke2/issues/1541). The workaround we are applying is disabling the checksum
-offloading by default by applying the value `ChecksumOffloadBroken=true` in the [calico helm chart](https://github.com/rancher/rke2-charts/blob/main/charts/rke2-calico/rke2-calico/v3.25.001/values.yaml#L75-L76).
+rke2 project. The workaround we are applying is disabling the checksum
+offloading by default by applying the value `ChecksumOffloadBroken=true` in the calico helm chart.
 
 This issue has been observed in Ubuntu 18.04, Ubuntu 20.04 and openSUSE Leap 15.3
 

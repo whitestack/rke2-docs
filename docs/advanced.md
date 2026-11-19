@@ -172,7 +172,7 @@ cloud-provider-name: aws
 
 When installing RKE2 on classified regions (such as SC2S or C2S), there are a few additional pre-requisites to be aware of to ensure RKE2 knows how and where to securely communicate with the appropriate AWS endpoints:
 
-0. Ensure all the common AWS cloud-provider [prerequisites](https://rancher.com/docs/rke/latest/en/config-options/cloud-providers/aws/) are met.  These are independent of regions and are always required.
+0. Ensure all the common AWS cloud-provider prerequisites are met.  These are independent of regions and are always required.
 
 1. Ensure RKE2 knows where to send API requests for `ec2` and `elasticloadbalancing` services by creating a `cloud.conf` file, the below is an example for the `us-iso-east-1` (C2S) region:
 

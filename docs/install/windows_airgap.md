@@ -11,7 +11,7 @@ You can either deploy using the `rke2-windows-<BUILD_VERSION>-amd64-images.tar.g
 - rke2-windows-1809-amd64-images.tar.gz
 - rke2-windows-ltsc2022-amd64-images.tar.gz
 
-All files mentioned in the steps can be obtained from the assets of the desired released RKE2 version [here](https://github.com/rancher/rke2/releases).
+All files mentioned in the steps can be obtained from the assets of the desired released RKE2 version here.
 
 ## Prepare the Windows Agent Node
 

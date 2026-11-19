@@ -38,7 +38,7 @@ All of these, except Traefik, are compiled and statically linked with [Go+Boring
 ### Content Bootstrap
 
 RKE2 sources binaries and manifests to run both _server_ and _agent_ nodes from the RKE2 Runtime image.
-This means RKE2 scans `/var/lib/rancher/rke2/agent/images/*.tar` for the [`rancher/rke2-runtime`](https://hub.docker.com/r/rancher/rke2-runtime/tags)
+This means RKE2 scans `/var/lib/rancher/rke2/agent/images/*.tar` for the `rancher/rke2-runtime`
 image (with a tag correlating to the output of `rke2 --version`) by default and if it cannot be found, attempts to pull
 it from the network (a.k.a. Docker Hub). RKE2 then extracts `/bin/` from the image, flattening it into
 `/var/lib/rancher/rke2/data/${RKE2_DATA_KEY}/bin` where `${RKE2_DATA_KEY}` represents a unique string identifying the

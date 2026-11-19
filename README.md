@@ -1,6 +1,6 @@
 # Website
 
-This repo contains the contents of the RKE2 documentation website found at https://docs.rke2.io. Please open an issue if you have suggestions for new content or edits. We also gladly accept community PRs.
+This repo contains the contents of the WhiteCruiser RKE2 documentation website, maintained by Whitestack and based on the upstream RKE2 documentation. Please open an issue if you have suggestions for new content or edits.
 
 The website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
@@ -28,4 +28,4 @@ This command generates static content into the `build` directory and can be serv
 
 ### Deployment
 
-An automated GH action will deploy the website to [GitHub Pages](https://github.com/rancher/rke2-docs/tree/gh-pages) once a PR has been merged to `main`.
+An automated GH action will deploy the website to [GitHub Pages](https://github.com/whitestack/rke2-docs/tree/gh-pages) once a PR has been merged to `main`.

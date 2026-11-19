@@ -2,7 +2,7 @@
 title: RKE2 security responder
 ---
 
-The RKE2 security responder client is an optional component that helps identify security updates for the RKE2 version running in your cluster. It collects non-identifying cluster metadata and sends it to a service managed by SUSE. The service returns information about available versions and security advisories that may apply to the cluster. The source code for the security responder project is available in the [`rancher/rke2-security-responder` GitHub repository](https://github.com/rancher/rke2-security-responder).
+The RKE2 security responder client is an optional component that helps identify security updates for the RKE2 version running in your cluster. It collects non-identifying cluster metadata and sends it to a service managed by SUSE. The service returns information about available versions and security advisories that may apply to the cluster. The source code for the security responder project is available in the `rancher/rke2-security-responder` GitHub repository.
 
 :::info Version Gate
 The RKE2 security responder client is bundled with RKE2 v1.37 and newer, and is enabled by default.
@@ -79,16 +79,16 @@ The responder collects the following metadata, depending on the configured [coll
 | `gpuNodeCount` | Number of nodes with a GPU. | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> | <span style={{color: 'red'}} aria-label="Actual value not reported">✗</span> |
 | `gpu-vendor` | GPU vendor, when detected. | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> |
 | `gpu-operator` / `gpu-operator-version` | GPU operator and version, when detected. | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> |
-| `rancher-managed` | Whether Rancher Manager manages the cluster. | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> |
-| `rancher-version` | Rancher Manager version, when detected. | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> | <span style={{color: 'red'}} aria-label="Actual value not reported">✗</span> |
-| `rancher-install-uuid` | Rancher Manager installation UUID, when detected. | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> | <span style={{color: 'red'}} aria-label="Actual value not reported">✗</span> |
-| `rancher-prime` | Whether the cluster uses a Rancher Prime distribution. | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> |
+| `rancher-managed` | Whether WhiteCruiser Manager manages the cluster. | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> |
+| `rancher-version` | WhiteCruiser Manager version, when detected. | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> | <span style={{color: 'red'}} aria-label="Actual value not reported">✗</span> |
+| `rancher-install-uuid` | WhiteCruiser Manager installation UUID, when detected. | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> | <span style={{color: 'red'}} aria-label="Actual value not reported">✗</span> |
+| `rancher-prime` | Whether the cluster uses a Prime distribution. | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> |
 | `system-default-registry` | The observed system default registry, when configured. | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> |
 | `ip-stack` | Cluster IP stack configuration: IPv4-only, IPv6-only, or dual-stack. | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> | <span style={{color: 'green'}} aria-label="Actual value reported">✓</span> |
 
 The `clusteruuid` is derived from the Kubernetes `kube-system` namespace UID. It is used only for report deduplication and is not tied to an account, organization, or person.
 
-The green check means that the actual value is reported in that mode. The red arrow means that the actual value is not reported. In `minimal` mode, these fields are still present in the payload with redacted placeholder values: numeric fields use `-1`, and Rancher version and installation UUID use an empty string.
+The green check means that the actual value is reported in that mode. The red arrow means that the actual value is not reported. In `minimal` mode, these fields are still present in the payload with redacted placeholder values: numeric fields use `-1`, and WhiteCruiser version and installation UUID use an empty string.
 
 ## Collection mode
 
@@ -97,9 +97,9 @@ The `mode` Helm value controls how much cluster metadata is included in the repo
 | Mode | Description |
 |------|-------------|
 | `recommended` | Sends the complete set of supported metadata. This is the default. |
-| `minimal` | Reduces the report by deleting node counts, resource totals, and Rancher version and installation UUID. |
+| `minimal` | Reduces the report by deleting node counts, resource totals, and WhiteCruiser version and installation UUID. |
 
-In `minimal` mode, the redacted numeric fields are sent as `-1`. This value means that the field was intentionally not reported; it does not represent the actual number of nodes or resources. The redacted Rancher fields are sent as empty strings.
+In `minimal` mode, the redacted numeric fields are sent as `-1`. This value means that the field was intentionally not reported; it does not represent the actual number of nodes or resources. The redacted WhiteCruiser fields are sent as empty strings.
 
 The following information remains available in `minimal` mode:
 
@@ -107,8 +107,8 @@ The following information remains available in `minimal` mode:
 - Operating system, kernel, architecture, SELinux status, and node information consistency
 - CNI plugin, ingress controller, and IP stack configuration
 - GPU vendor and operator information, when detected
-- Whether Rancher Manager manages the cluster
-- Rancher Prime distribution information and observed system default registry
+- Whether WhiteCruiser Manager manages the cluster
+- Prime distribution information and observed system default registry
 
 ## Privacy
 

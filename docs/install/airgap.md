@@ -18,7 +18,7 @@ If you have not yet set up a private Docker registry, refer to the [official Reg
 
 #### Create the Registry YAML and Push Images
 
-1. Obtain the images archive for your architecture from the [releases](https://github.com/rancher/rke2/releases) page for the version of RKE2 you will be running.
+1. Obtain the images archive for your architecture from the releases page for the version of RKE2 you will be running.
 2. Assuming amd64, use `docker image load -i rke2-images.linux-amd64.tar.zst` to import images from the tar file into docker.
 3. Use `docker tag` and `docker push` to retag and push the loaded images to your private registry.
 4. Follow the [Private Registry Configuration](private_registry.md) guide to create and configure the `registries.yaml` file.
@@ -37,7 +37,7 @@ This method requires you to manually deploy the necessary images to each node, a
 
 #### Prepare the Images Directory and Airgap Image Tarball
 
-1. On internet accessible machine, download the images archive for your architecture from the [releases](https://github.com/rancher/rke2/releases) page for the version of RKE2 you will be running.
+1. On internet accessible machine, download the images archive for your architecture from the releases page for the version of RKE2 you will be running.
 ```bash
   sudo curl -LO "https://github.com/rancher/rke2/releases/download/v1.33.1%2Brke2r1/rke2-images.linux-amd64.tar.zst"
 ```
@@ -208,7 +208,7 @@ RKE2 in airgap can be installed using the binary or the install script
 <TabItem value="Binary install">
 
 #### Binaries
-- Download the RKE2 binary file `rke2.linux-amd64` from the [releases](https://github.com/rancher/rke2/releases) page, matching the same version and architecture used to get the airgap images. Place the binary in `/usr/local/bin` on each air-gapped node and ensure it is executable.
+- Download the RKE2 binary file `rke2.linux-amd64` from the releases page, matching the same version and architecture used to get the airgap images. Place the binary in `/usr/local/bin` on each air-gapped node and ensure it is executable.
 - Run the binary with the desired parameters. For example, if using the Private Registry Method, your config file would have the following:
 
 ```yaml
@@ -250,7 +250,7 @@ INSTALL_RKE2_ARTIFACT_PATH=/root/rke2-artifacts sh install.sh
 
 Upgrading an air-gap environment can be accomplished in the following manner:
 
-1. Download the new air-gap images (tar files) from the [releases](https://github.com/rancher/rke2/releases) page for the version of RKE2 you will be upgrading to. Place the tar in the `/var/lib/rancher/rke2/agent/images/` directory on each node. Delete the old tar files.
+1. Download the new air-gap images (tar files) from the releases page for the version of RKE2 you will be upgrading to. Place the tar in the `/var/lib/rancher/rke2/agent/images/` directory on each node. Delete the old tar files.
 2. Follow the steps of the [manual upgrade method](../upgrades/manual.md#manually-upgrade-rke2-using-the-binary)
 
 </TabItem>
@@ -260,7 +260,7 @@ RKE2 supports [automated upgrades](../upgrades/automated.md). To enable this in 
 
 You will need the version of rancher/rke2-upgrade that corresponds to the version of RKE2 you intend to upgrade to. Note, the image tag replaces the `+` in the RKE2 release with a `-` because Docker images do not support `+`.
 
-You will also need the versions of system-upgrade-controller and kubectl that are specified in the system-upgrade-controller manifest YAML that you will deploy. Check for the latest release of the system-upgrade-controller [here](https://github.com/rancher/system-upgrade-controller/releases/latest) and download the system-upgrade-controller.yaml to determine the versions you need to push to your private registry. For example, in release v0.15.2 of the system-upgrade-controller, these images are specified in the manifest YAML:
+You will also need the versions of system-upgrade-controller and kubectl that are specified in the system-upgrade-controller manifest YAML that you will deploy. Check for the latest release of the system-upgrade-controller here and download the system-upgrade-controller.yaml to determine the versions you need to push to your private registry. For example, in release v0.15.2 of the system-upgrade-controller, these images are specified in the manifest YAML:
 
 ```
 rancher/system-upgrade-controller:v0.15.2

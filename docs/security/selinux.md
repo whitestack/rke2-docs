@@ -11,7 +11,7 @@ There are two independent requirements that must be fulfilled on **every** node 
 
 Depending on how you install RKE2, you get both, or neither. See [How each install method handles SELinux](#how-each-install-method-handles-selinux).
 
-The [policy](https://github.com/rancher/rke2-selinux) supporting this is a specialization of the
+The policy supporting this is a specialization of the
 [container-selinux](https://github.com/containers/container-selinux) policy for containerd. It accounts
 for the non-standard location(s) which containerd is installed and places persistent and ephemeral state.
 
@@ -70,7 +70,7 @@ The policy is not tied to a particular RKE2 minor version — a single `rke2-sel
 ```bash
 cat << EOF > /etc/zypp/repos.d/rancher-rke2-common-latest.repo
 [rancher-rke2-common-latest]
-name=Rancher RKE2 Common Latest
+name=WhiteCruiser RKE2 Common Latest
 baseurl=https://rpm.rancher.io/rke2/latest/common/slemicro/noarch
 enabled=1
 gpgcheck=1
@@ -89,7 +89,7 @@ SLE Micro uses the same `slemicro` repository, but as an immutable distribution 
 ```bash
 cat << EOF > /etc/zypp/repos.d/rancher-rke2-common-latest.repo
 [rancher-rke2-common-latest]
-name=Rancher RKE2 Common Latest
+name=WhiteCruiser RKE2 Common Latest
 baseurl=https://rpm.rancher.io/rke2/latest/common/slemicro/noarch
 enabled=1
 gpgcheck=1
@@ -109,7 +109,7 @@ MicroOS uses the `microos` repository and, like SLE Micro, requires `transaction
 ```bash
 cat << EOF > /etc/zypp/repos.d/rancher-rke2-common-latest.repo
 [rancher-rke2-common-latest]
-name=Rancher RKE2 Common Latest
+name=WhiteCruiser RKE2 Common Latest
 baseurl=https://rpm.rancher.io/rke2/latest/common/microos/noarch
 enabled=1
 gpgcheck=1
@@ -128,7 +128,7 @@ reboot
 export LINUX_MAJOR=9 # or 8 or 10
 cat << EOF > /etc/yum.repos.d/rancher-rke2-common-latest.repo
 [rancher-rke2-common-latest]
-name=Rancher RKE2 Common Latest
+name=WhiteCruiser RKE2 Common Latest
 baseurl=https://rpm.rancher.io/rke2/latest/common/centos/${LINUX_MAJOR}/noarch
 enabled=1
 gpgcheck=1
@@ -160,7 +160,7 @@ Replace `latest` with `stable` in both the repository name and the URL to track 
 
 There is no repository to reach from an air-gapped node, so fetch the RPM and its dependencies on a machine that can reach the internet and copy them across.
 
-The simplest source for the policy alone is the [rke2-selinux releases page](https://github.com/rancher/rke2-selinux/releases/latest), which publishes one `noarch` RPM per distribution — `.slemicro` (SLES / SLE Micro), `.sle` (MicroOS), `.el8`, `.el9` and `.el10`. Pick the one matching your OS:
+The simplest source for the policy alone is the rke2-selinux releases page, which publishes one `noarch` RPM per distribution — `.slemicro` (SLES / SLE Micro), `.sle` (MicroOS), `.el8`, `.el9` and `.el10`. Pick the one matching your OS:
 
 ```bash
 # on a machine with network access
@@ -245,9 +245,9 @@ introduces its own context labels:
 
 | Label | Applied to | Purpose |
 | --- | --- | --- |
-| [`rke2_service_db_t`](https://github.com/rancher/rke2-selinux/blob/v0.23.stable.1/policy/centos9/rke2.te#L22-L25) | The `etcd` static pod | Read-write access to the datastore under `/var/lib/rancher/rke2/server/db` |
-| [`rke2_service_t`](https://github.com/rancher/rke2-selinux/blob/v0.23.stable.1/policy/centos9/rke2.te#L13-L17) | The remaining control-plane static pods | Read-only access to control-plane state |
-| [`rke2_tls_t`](https://github.com/rancher/rke2-selinux/blob/v0.23.stable.1/policy/centos9/rke2.te#L34-L37) | `/var/lib/rancher/rke2/server/tls` | Certificates and keys read by the control-plane pods |
+| `rke2_service_db_t` | The `etcd` static pod | Read-write access to the datastore under `/var/lib/rancher/rke2/server/db` |
+| `rke2_service_t` | The remaining control-plane static pods | Read-only access to control-plane state |
+| `rke2_tls_t` | `/var/lib/rancher/rke2/server/tls` | Certificates and keys read by the control-plane pods |
 
 These labels are only applied to the RKE2 control-plane static pods; workload pods are unaffected and continue to use the standard `container_t` domain.
 

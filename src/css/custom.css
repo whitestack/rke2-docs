@@ -38,13 +38,19 @@
 }
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary-lightest: #80bbe2;
-  --ifm-color-primary-lighter: #5eaadb;
-  --ifm-color-primary-light: #53a4d8;
-  --ifm-color-primary: #3d98d3;
-  --ifm-color-primary-dark: #2d8bc8;
-  --ifm-color-primary-darker: #2b83bc;
-  --ifm-color-primary-darkest: #236c9b;
+  /* Whitestack brand: navy bars, orange accent, neutral grays */
+  --ifm-color-primary: #c2541a;
+  --ifm-color-primary-dark: #af4c17;
+  --ifm-color-primary-darker: #a54916;
+  --ifm-color-primary-darkest: #873b12;
+  --ifm-color-primary-light: #d35c1d;
+  --ifm-color-primary-lighter: #d9662a;
+  --ifm-color-primary-lightest: #e07f4c;
+  --ifm-navbar-background-color: #002263;
+  --ifm-navbar-link-color: #ffffff;
+  --ifm-navbar-link-hover-color: #ec7a3c;
+  --ifm-menu-color-background-active: #f3f4f6;
+  --ifm-menu-color-background-hover: #f3f4f6;
   --ifm-code-font-size: 95%;
   --ifm-container-width-xl: 1600px;
   --ifm-container-width: 1400px;
@@ -53,6 +59,34 @@
 
 [data-theme='dark'] {
   --label-color: rgb(67, 67, 67);
+  --ifm-color-primary: #ec7a3c;
+  --ifm-color-primary-dark: #e9672a;
+  --ifm-color-primary-darker: #e85e1f;
+  --ifm-color-primary-darkest: #c44a12;
+  --ifm-color-primary-light: #f08d57;
+  --ifm-color-primary-lighter: #f29767;
+  --ifm-color-primary-lightest: #f6b891;
+  --ifm-menu-color-background-active: #1f2230;
+  --ifm-menu-color-background-hover: #1f2230;
+}
+
+/* Navbar: navy background with white text/icons in both themes */
+.navbar {
+  background-color: #002263;
+}
+.navbar .navbar__link,
+.navbar .navbar__toggle,
+.navbar .clean-btn {
+  color: #ffffff;
+}
+.navbar .navbar__link:hover {
+  color: #cfdcff;
+}
+.navbar__logo img {
+  height: 2rem;
+}
+.footer--dark {
+  --ifm-footer-background-color: #002263;
 }
 
 @media (max-width: 768px) {
@@ -114,4 +148,13 @@ hr {
   word-break: normal;
   overflow-wrap: break-word;
   white-space: normal;
+}
+[data-theme='light'] .menu__link--active:not(.menu__link--sublist) {
+  color: #c2541a;
+  font-weight: 600;
+}
+
+/* Remove the light separator line between the announcement bar and the navbar */
+div[class*='announcementBar'] {
+  border-bottom: 0;
 }

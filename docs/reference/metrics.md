@@ -24,7 +24,7 @@ kubectl get --server https://NODENAME:9345 --raw /metrics
 
 Metrics exposed by the RKE2 supervisor process include:
 * [RKE2 Cluster Management Metrics](#rke2-cluster-management-metrics)
-* [Lasso controller metrics](https://github.com/rancher/lasso/blob/main/README.md#lasso-controller)
+* Lasso controller metrics
 * [Kubernetes client and workqueue metrics](https://github.com/kubernetes/client-go/blob/master/README.md)
 * [Go runtime metrics](https://pkg.go.dev/runtime/metrics#hdr-Supported_metrics)
 * If the RKE2 embedded registry is enabled, [Spegel metrics](https://spegel.dev/docs/metrics/) and [libp2p metrics](https://github.com/libp2p/go-libp2p/blob/master/README.md)

@@ -66,7 +66,7 @@ Find the full API in the [auto-generated API docs](https://github.com/k3s-io/hel
 
 
 :::note 
-Consider setting `failurePolicy: abort` for complex helm charts (e.g. Rancher) or for CNI plugins during upgrades. While the default `reinstall` policy is effective for general applications, it can be disruptive for certain critical infrastructure components. The default failure policy triggers an automatic uninstall and reinstall of the chart if the Helm upgrade operation is interrupted and the chart release is stuck in a pending state. This uninstallation can tear down networking or delete critical CRDs, leading to cluster-wide disruption. Setting the policy to `abort` ensures the failed chart release is left in place for manual troubleshooting, potentially avoiding further disruption.
+Consider setting `failurePolicy: abort` for complex helm charts (e.g. WhiteCruiser) or for CNI plugins during upgrades. While the default `reinstall` policy is effective for general applications, it can be disruptive for certain critical infrastructure components. The default failure policy triggers an automatic uninstall and reinstall of the chart if the Helm upgrade operation is interrupted and the chart release is stuck in a pending state. This uninstallation can tear down networking or delete critical CRDs, leading to cluster-wide disruption. Setting the policy to `abort` ensures the failed chart release is left in place for manual troubleshooting, potentially avoiding further disruption.
 :::
 
 ### Using the Helm CRD
@@ -162,7 +162,7 @@ spec:
       tag: v1.14.3-build20260506
 ```
 
-You can find all the packaged Helm charts including their documentation and default values in the [RKE2 charts repository](https://github.com/rancher/rke2-charts/tree/main/charts).
+You can find all the packaged Helm charts including their documentation and default values in the RKE2 charts repository.
 
 
 ## Automatically Deploying Manifests and Helm Charts

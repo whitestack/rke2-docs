@@ -4,7 +4,7 @@ title: Cluster Load Balancer
 
 
 :::note
-This guide is provided as-is and does not indicate official SUSE endorsement or support of HAProxy or other external load balancers. 
+This guide is provided as-is and does not indicate official Whitestack endorsement or support of HAProxy or other external load balancers. 
 
 :::tip
 External load-balancers should not be confused with the optional ServiceLB, which is an embedded controller that allows for use of Kubernetes LoadBalancer Services without deploying a third-party load-balancer controller. For more details, see [Service Load Balancer](./networking_services.md#service-load-balancer).

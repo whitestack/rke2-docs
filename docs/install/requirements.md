@@ -22,7 +22,7 @@ RKE2 is available for x86_64 and arm64/aarch64
 
 ### Linux
 
-See the [RKE2 Support Matrix](https://www.suse.com/suse-rke2/support-matrix/all-supported-versions/rke2-v1-36) for all the OS versions that have been validated with RKE2. In general, RKE2 should work on any Linux distribution that uses systemd and iptables/nftables.
+See the RKE2 Support Matrix for all the OS versions that have been validated with RKE2. In general, RKE2 should work on any Linux distribution that uses systemd and iptables/nftables.
 
 <Tabs>
 <TabItem value="SLES16">

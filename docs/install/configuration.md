@@ -138,7 +138,7 @@ This installation script is straight-forward and will do the following:
 Windows Support requires choosing Calico or Flannel as the CNI for the RKE2 cluster
 :::
 
-As mentioned in the [Quick-Start Guide](quickstart.md), you can use the installation script available at [https://github.com/rancher/rke2/blob/master/install.ps1](https://github.com/rancher/rke2/blob/master/install.ps1) to install RKE2 on a Windows Agent Node.
+As mentioned in the [Quick-Start Guide](quickstart.md), you can use the installation script available at https://github.com/rancher/rke2/blob/master/install.ps1 to install RKE2 on a Windows Agent Node.
 
 The simplest form of this command is as follows:
 
@@ -183,7 +183,7 @@ Invoke-WebRequest -Uri https://raw.githubusercontent.com/rancher/rke2/master/ins
 
 ## Running the Binary Directly
 
-As stated, the installation script is primarily concerned with configuring RKE2 to run as a service. If you choose to not use the script, you can run RKE2 simply by downloading the binary from our [release page](https://github.com/rancher/rke2/releases/latest), placing it on your path, and executing it. The important commands are:
+As stated, the installation script is primarily concerned with configuring RKE2 to run as a service. If you choose to not use the script, you can run RKE2 simply by downloading the binary from our release page, placing it on your path, and executing it. The important commands are:
 
 Command | Description
 --------|------------------

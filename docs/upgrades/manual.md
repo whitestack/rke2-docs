@@ -19,7 +19,7 @@ Upgrades performed via the installation script or using our [automated upgrades]
 | latest          | Latest is recommended for trying out the latest features.  These releases have not yet been through a period of community hardening, and may not be compatible with Rancher. |
 | v1.26 (example) | There is a release channel tied to each Kubernetes minor version, including versions that are end-of-life. These channels will select the latest patch available, not necessarily a stable release. |
 
-For an exhaustive and up-to-date list of channels, you can visit the [rke2 channel service API](https://update.rke2.io/v1-release/channels). For more technical details on how channels work, you can see the [channelserver project](https://github.com/rancher/channelserver).
+For an exhaustive and up-to-date list of channels, you can visit the [rke2 channel service API](https://update.rke2.io/v1-release/channels). For more technical details on how channels work, you can see the channelserver project.
 
 :::warning
 When attempting to upgrade to a new version of RKE2, the [Kubernetes version skew policy](https://kubernetes.io/docs/setup/release/version-skew-policy/) applies. Ensure that your plan does not skip intermediate minor versions when upgrading. Nothing in the upgrade process will protect against unsupported changes to the Kubernetes version.
@@ -65,7 +65,7 @@ systemctl restart rke2-agent
 
 Or to manually upgrade RKE2:
 
-1. Download the desired version of the rke2 binary from [releases](https://github.com/rancher/rke2/releases)
+1. Download the desired version of the rke2 binary from releases
 2. Copy the downloaded binary to `/usr/local/bin/rke2` for tarball installed rke2, and `/usr/bin` for rpm installed rke2
 3. Restart the rke2-server or rke2-agent service
 

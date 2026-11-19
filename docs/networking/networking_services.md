@@ -214,7 +214,7 @@ This is done in 2 steps:
 <TabItem value="ingress-nginx">
 
 :::warning ingress-nginx EOL
-[ingress-nginx went EOL](https://kubernetes.io/blog/2025/11/11/ingress-nginx-retirement/) in March 2026. No new images or fixes are expected. Please switch to Traefik using [our migration guide](../reference/ingress_migration.md) or become a [Rancher Prime user](https://www.suse.com/products/rancher/) for an extended support period. 
+[ingress-nginx went EOL](https://kubernetes.io/blog/2025/11/11/ingress-nginx-retirement/) in March 2026. No new images or fixes are expected. Please switch to Traefik using [our migration guide](../reference/ingress_migration.md) or contact Whitestack for an extended support period. 
 
 In v1.36, RKE2 still includes ingress-nginx but with a deprecated status. In v1.37, ingress-nginx is removed and unavailable for new clusters; existing clusters may operate in "dual-ingress" mode with both [ingress-nginx and Traefik](../reference/ingress_migration.md#2-update-rke2-configuration) or switch entirely to Traefik. 
 :::
@@ -242,7 +242,7 @@ spec:
       config:
         use-forwarded-headers: "true"
 ```
-For more information, refer to the official [ingress-nginx Helm configuration parameters](https://github.com/rancher/rke2-charts/tree/main/charts/rke2-ingress-nginx) (select the chart version packaged with your RKE2 release).
+For more information, refer to the official ingress-nginx Helm configuration parameters (select the chart version packaged with your RKE2 release).
 
 </TabItem>
 <TabItem value="traefik" default>
@@ -271,7 +271,7 @@ spec:
       general:
         level: "DEBUG"
 ```
-To see all configurable options, visit the chart's [values.yaml](https://github.com/rancher/rke2-charts/tree/main/charts/rke2-traefik) (select the chart version packaged with your RKE2 release).
+To see all configurable options, visit the chart's values.yaml (select the chart version packaged with your RKE2 release).
 
 </TabItem>
 </Tabs>
@@ -311,7 +311,7 @@ Prior to the April 2026 releases (v1.33.11+rke2r1, v1.34.7+rke2r1 and v1.35.4+rk
 If you need support for experimental Gateway API resources, you must install them separately. For example, for Gateway API v1.4, install the [v1.4 experimental-install.yaml](https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.4.0/experimental-install.yaml) from the official [gateway-api releases](https://github.com/kubernetes-sigs/gateway-api/releases/tag/v1.4.0) and use the option `providers.kubernetesGateway.experimentalChannel=true` in the rke2-traefik chart values.
 :::
 
-Starting with RKE2 v1.37, Gateway API CRDs are no longer bundled with Traefik; they are now part of a standalone chart. For more information on this change, see the [Architectural Decision Record](https://github.com/rancher/rke2/blob/master/docs/adrs/011-bundle-gatewayAPI.md#standalone-gateway-api-crd-management).
+Starting with RKE2 v1.37, Gateway API CRDs are no longer bundled with Traefik; they are now part of a standalone chart. For more information on this change, see the Architectural Decision Record.
 
 ## Service Load Balancer
 

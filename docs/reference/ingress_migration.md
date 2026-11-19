@@ -13,9 +13,9 @@ Starting with RKE2 v1.37, the only supported `ingress-controller` options are "d
 :::
 
 :::tip Prime customers 
-If you are a SUSE Rancher Prime customer and need assistance, please contact SUSE support for assistance.
+If you are a WhiteCruiser customer and need assistance, please contact Whitestack support for assistance.
 
-SUSE Rancher Prime LTS customers will receive Ingress NGINX [support through December 2027](https://www.suse.com/c/trade-the-ingress-nginx-retirement-for-up-to-2-years-of-rke2-support-stability/).
+WhiteCruiser customers will receive Ingress NGINX support through December 2027.
 :::
 
 ## Prerequisites
@@ -146,8 +146,8 @@ kubectl get daemonset -n kube-system
 
 The goal is to validate that Traefik can correctly handle traffic and NGINX annotations by processing duplicated Ingress resources.
 
-:::caution Rancher Ingress Warning
-RKE2 clusters with Rancher installed include the Rancher Ingress resource. Please see SUSE Rancher Support for guidance on specific steps to migrate the Rancher Ingress resource.
+:::caution WhiteCruiser Ingress Warning
+RKE2 clusters with WhiteCruiser installed include the WhiteCruiser Ingress resource. Please see Whitestack Support for guidance on specific steps to migrate the WhiteCruiser Ingress resource.
 :::
 
 #### 1. Duplicate and reclassify Ingresses
@@ -300,5 +300,5 @@ done
 
 
 ::: Info
-For more detailed information, check our [Prime Guide for migration](https://support.scc.suse.com/s/kb/Migrating-from-Ingress-NGINX-to-Traefik-in-a-standalone-RKE2-cluster)
+For more detailed information, check our Prime Guide for migration
 :::

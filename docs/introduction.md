@@ -4,10 +4,8 @@ sidebar_position: 1
 title: Introduction
 ---
 
-![](/img/logo-horizontal-rke2.svg#gh-light-mode-only)
-![](/img/logo-horizontal-rke2-dark.svg#gh-dark-mode-only)
 
-RKE2 is Rancher's enterprise-ready next-generation Kubernetes distribution. It has also been known as RKE Government.
+RKE2 is an enterprise-ready next-generation Kubernetes distribution, used by WhiteCruiser from Whitestack. It has also been known as RKE Government.
 
 It is a fully [conformant Kubernetes distribution](https://landscape.cncf.io/?group=projects-and-products&view-mode=card&item=platform--certified-kubernetes-distribution--rke-government#app-definition-and-development--application-definition-image-build) that focuses on security and compliance within the U.S. Federal Government sector.
 
@@ -28,12 +26,16 @@ From RKE1, it inherits close alignment with upstream Kubernetes. In places K3s h
 Importantly, RKE2 does not rely on Docker as RKE1 does. RKE1 leveraged Docker for deploying and managing the control plane components as well as the container runtime for Kubernetes. RKE2 launches control plane components as static pods, managed by the kubelet. The embedded container runtime is containerd.
 
 ## Why two names?
-It is known as RKE2 as it is the next iteration of the Rancher Kubernetes Engine for datacenter use cases. The distribution runs standalone or integrated into Rancher. Automated provisioning of new RKE2 clusters is available in Rancher v2.6+.
+It is known as RKE2 as it is the next iteration of RKE (Kubernetes Engine) for datacenter use cases. The distribution runs standalone or integrated into WhiteCruiser.
 
 It has also been known as RKE Government as it was designed to target sectors with heightened security requirements.
 
+:::note
+Some paths, image names and package repositories in this documentation contain the name `rancher` (for example `/etc/rancher/rke2/config.yaml`, `/var/lib/rancher/rke2` or `rancher/rke2-*` images). They are the standard locations used by RKE2 itself and must be used exactly as written.
+:::
+
 ## Security
 
-SUSE supports responsible disclosure and endeavors to resolve security issues in a reasonable
-timeframe. To report a security vulnerability, please refer to our [Security Policy](https://github.com/rancher/rke2/security/policy).
+Whitestack supports responsible disclosure and endeavors to resolve security issues in a reasonable
+timeframe. To report a security vulnerability, please refer to our Security Policy.
 

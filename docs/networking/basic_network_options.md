@@ -23,7 +23,7 @@ Bundled CNI Plugins are provided as AddOns that deploy a HelmChart resource, as 
 
 To customize the Helm chart values for a bundled CNI Plugin chart, you must create a HelmChartConfig resource that matches the name and namespace of its corresponding HelmChart. See the tabs below for examples of customizing the chart values for each of the bundled CNI Plugins.
 
-Default chart values can be found by browsing the [RKE2 charts repository](https://github.com/rancher/rke2-charts/tree/main/charts), and referencing `values.yaml` for the version of the chart bundled with your RKE2 version.
+Default chart values can be found by browsing the RKE2 charts repository, and referencing `values.yaml` for the version of the chart bundled with your RKE2 version.
 
 <Tabs groupId="CNIplugin" queryString>
 <TabItem value="Canal CNI Plugin" default>
@@ -62,7 +62,7 @@ spec:
 
 After that, please restart the canal daemonset to use the newer config by executing: `kubectl rollout restart ds rke2-canal -n kube-system`
 
-For more information about the full options of the Canal config please refer to the [rke2-charts](https://github.com/rancher/rke2-charts/blob/main-source/packages/rke2-canal/charts/values.yaml).
+For more information about the full options of the Canal config please refer to the rke2-charts.
 
 :::note
 Canal requires the iptables or xtables-nft package to be installed on the node.
@@ -94,7 +94,7 @@ spec:
       type: wireguard
 ```
 
-For more information about values available in the Cilium chart, please refer to the [rke2-charts repository](https://github.com/rancher/rke2-charts/blob/main/charts/rke2-cilium/rke2-cilium/1.19.101/values.yaml)
+For more information about values available in the Cilium chart, please refer to the rke2-charts repository
 
 
 <details>
@@ -184,7 +184,7 @@ spec:
       featureDetectOverride: "ChecksumOffloadBroken=false"
 ```
 
-For more information about values available for the Calico chart, please refer to the [rke2-charts repository](https://github.com/rancher/rke2-charts/blob/main/charts/rke2-calico/rke2-calico/v3.31.400/values.yaml)
+For more information about values available for the Calico chart, please refer to the rke2-charts repository
 
 <details>
 <summary>**eBPF dataplane**</summary>

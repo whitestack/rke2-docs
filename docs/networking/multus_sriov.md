@@ -153,4 +153,4 @@ The Dynamic Networks Controller can be deployed only with Multus in "thick plugi
 
 Using the SR-IOV CNI with Multus can help with data-plane acceleration use cases, providing an extra interface in the pod that can achieve very high throughput. Complete deployment steps, prerequisites, and hardware compatibility details can be found in the [SR-IOV Network Operator Quickstart Guide](https://github.com/k8snetworkplumbingwg/sriov-network-operator/blob/master/doc/quickstart.md)
 
-For fully validated configurations and enterprise-grade infrastructure support for SR-IOV in RKE2, refer to [SUSE Telco Cloud](https://documentation.suse.com/suse-edge/3.5/html/edge/atip-features.html#sriov)
+For fully validated configurations and enterprise-grade infrastructure support for SR-IOV in RKE2, refer to SUSE Telco Cloud

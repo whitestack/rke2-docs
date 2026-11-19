@@ -77,7 +77,7 @@ SUSE Linux Enterprise Server 16 uses the `slemicro` repository:
 export RKE2_MINOR=36
 cat << EOF > /etc/zypp/repos.d/rancher-rke2-1-${RKE2_MINOR}-latest.repo
 [rancher-rke2-common-latest]
-name=Rancher RKE2 Common Latest
+name=WhiteCruiser RKE2 Common Latest
 baseurl=https://rpm.rancher.io/rke2/latest/common/slemicro/noarch
 enabled=1
 gpgcheck=1
@@ -85,7 +85,7 @@ repo_gpgcheck=1
 gpgkey=https://rpm.rancher.io/public.key
 
 [rancher-rke2-1-${RKE2_MINOR}-latest]
-name=Rancher RKE2 1.${RKE2_MINOR} Latest
+name=WhiteCruiser RKE2 1.${RKE2_MINOR} Latest
 baseurl=https://rpm.rancher.io/rke2/latest/1.${RKE2_MINOR}/slemicro/x86_64
 enabled=1
 gpgcheck=1
@@ -111,7 +111,7 @@ SLE Micro uses the `slemicro` repository:
 export RKE2_MINOR=36
 cat << EOF > /etc/zypp/repos.d/rancher-rke2-1-${RKE2_MINOR}-latest.repo
 [rancher-rke2-common-latest]
-name=Rancher RKE2 Common Latest
+name=WhiteCruiser RKE2 Common Latest
 baseurl=https://rpm.rancher.io/rke2/latest/common/slemicro/noarch
 enabled=1
 gpgcheck=1
@@ -119,7 +119,7 @@ repo_gpgcheck=1
 gpgkey=https://rpm.rancher.io/public.key
 
 [rancher-rke2-1-${RKE2_MINOR}-latest]
-name=Rancher RKE2 1.${RKE2_MINOR} Latest
+name=WhiteCruiser RKE2 1.${RKE2_MINOR} Latest
 baseurl=https://rpm.rancher.io/rke2/latest/1.${RKE2_MINOR}/slemicro/x86_64
 enabled=1
 gpgcheck=1
@@ -146,7 +146,7 @@ MicroOS uses the `microos` repository:
 export RKE2_MINOR=36
 cat << EOF > /etc/zypp/repos.d/rancher-rke2-1-${RKE2_MINOR}-latest.repo
 [rancher-rke2-common-latest]
-name=Rancher RKE2 Common Latest
+name=WhiteCruiser RKE2 Common Latest
 baseurl=https://rpm.rancher.io/rke2/latest/common/microos/noarch
 enabled=1
 gpgcheck=1
@@ -154,7 +154,7 @@ repo_gpgcheck=1
 gpgkey=https://rpm.rancher.io/public.key
 
 [rancher-rke2-1-${RKE2_MINOR}-latest]
-name=Rancher RKE2 1.${RKE2_MINOR} Latest
+name=WhiteCruiser RKE2 1.${RKE2_MINOR} Latest
 baseurl=https://rpm.rancher.io/rke2/latest/1.${RKE2_MINOR}/microos/x86_64
 enabled=1
 gpgcheck=1
@@ -182,7 +182,7 @@ export RKE2_MINOR=36
 export LINUX_MAJOR=8 # or 9 or 10 etc
 cat << EOF > /etc/yum.repos.d/rancher-rke2-1-${RKE2_MINOR}-latest.repo
 [rancher-rke2-common-latest]
-name=Rancher RKE2 Common Latest
+name=WhiteCruiser RKE2 Common Latest
 baseurl=https://rpm.rancher.io/rke2/latest/common/centos/${LINUX_MAJOR}/noarch
 enabled=1
 gpgcheck=1
@@ -190,7 +190,7 @@ repo_gpgcheck=1
 gpgkey=https://rpm.rancher.io/public.key
 
 [rancher-rke2-1-${RKE2_MINOR}-latest]
-name=Rancher RKE2 1.${RKE2_MINOR} Latest
+name=WhiteCruiser RKE2 1.${RKE2_MINOR} Latest
 baseurl=https://rpm.rancher.io/rke2/latest/1.${RKE2_MINOR}/centos/${LINUX_MAJOR}/x86_64
 enabled=1
 gpgcheck=1
